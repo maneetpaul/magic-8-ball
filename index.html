@@ -18,6 +18,7 @@
 <input type="text" id="questionText">
 </br>
 </br>
+<!-- return false prevents the form from "submitting" and refreshing the page -->
 <input type="submit" value="Submit your question" onClick="runQuestion(); return false;">
 </form>
     
@@ -28,16 +29,37 @@
 
 <script type="text/javascript">
 
+
 function runQuestion () {
 
-// Takes HTML text input and defines question var    
+// Takes HTML text input and defines userQuestion var value  
 let userQuestion = document.getElementById("questionText").value; 
     
 let randomNumber = Math.floor(Math.random() * 8);
 
-// let eightBall = '';
+let eightBall = '';
 
-/* switch (randomNumber) {
+if (userQuestion && randomNumber === 0) {
+  	eightBall = 'It is certain';
+} else if (userQuestion && randomNumber === 1) {
+    eightBall = 'It is decidedly so';
+} else if (userQuestion && randomNumber === 2) {
+  	eightBall = 'Reply hazy try again';
+} else if (userQuestion && randomNumber === 3) {
+  	eightBall = 'Cannot predict now';
+} else if (userQuestion && randomNumber === 4) {
+  	eightBall = 'Do not count on it';
+} else if (userQuestion && randomNumber === 5) {
+  	eightBall = 'My sources say no';
+} else if (userQuestion && randomNumber === 6) {
+  	eightBall = 'Outlook not so good';
+} else if (userQuestion && randomNumber === 7) {
+	eightBall = 'Signs point to yes';
+}
+
+
+/* Why doesn't this work but else if does?
+switch (randomNumber) {
   case 0:
     eightBall = 'It is certain';
     break;
@@ -48,30 +70,29 @@ let randomNumber = Math.floor(Math.random() * 8);
     eightBall = 'Reply hazy try again';
     break;
   case 3:
-    eightball = 'Cannot predict now';
+    eightBall = 'Cannot predict now';
     break;
   case 4:
-    eightball = 'Do not count on it';
+    eightBall = 'Do not count on it';
     break;
   case 5:
-    eightball = 'My sources say no';
+    eightBall = 'My sources say no';
     break;
   case 6:
-    eightball = 'Outlook not so good';
+    eightBall = 'Outlook not so good';
     break;
   case 7:
-    eightball = 'Signs point to yes';
+    eightBall = 'Signs point to yes';
     break;
 */
 
 // Displays eightBall text into HTML
-document.getElementById("answerBox").innerHTML = randomNumber;
+document.getElementById("answerBox").innerHTML = eightBall;
 
 };
 
 </script>
 </div>
-
 </center>    
 </body>
 
