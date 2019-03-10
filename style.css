@@ -22,3 +22,12 @@ input[type=submit] {
 	font-size:20px;
 	
 }
+
+#answerBox {
+	font-size:40px;
+	border:2px solid;
+}
+
+#answerBox:empty {
+	border:none;
+}
