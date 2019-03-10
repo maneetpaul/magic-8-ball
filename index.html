@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+   
+<title>Magic 8 Ball</title>
+<link rel="stylesheet" href="style.css">
+    
+</head>
+
+<body>
+<script src="js/main.js"></script>
+<center>
+
+<h1>What is your question?</h1>
+
+<form>
+<input type="text" id="questionText">
+</br>
+</br>
+<input type="submit" value="Submit your question" onClick="runQuestion()">
+</form>
+    
+<div>
+
+<p id="answerBox"></p>
+
+
+<script type="text/javascript">
+
+function runQuestion () {
+
+// Takes HTML text input and defines question var    
+let userQuestion = document.getElementById("questionText").value; 
+    
+let randomNumber = Math.floor(Math.random() * 8);
+
+// let eightBall = '';
+
+/* switch (randomNumber) {
+  case 0:
+    eightBall = 'It is certain';
+    break;
+  case 1:
+    eightBall = 'It is decidedly so';
+    break;
+  case 2:
+    eightBall = 'Reply hazy try again';
+    break;
+  case 3:
+    eightball = 'Cannot predict now';
+    break;
+  case 4:
+    eightball = 'Do not count on it';
+    break;
+  case 5:
+    eightball = 'My sources say no';
+    break;
+  case 6:
+    eightball = 'Outlook not so good';
+    break;
+  case 7:
+    eightball = 'Signs point to yes';
+    break;
+*/
+
+// Displays eightBall text into HTML
+document.getElementById("answerBox").innerHTML = randomNumber;
+
+};
+
+</script>
+</div>
+
+</center>    
+</body>
+
+
+
+
+</html>
